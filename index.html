@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>冰棒游戏</title>
+	<link type="text/css" href="game_base.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="home" id="home">
+		<a href="game.html" id="go-game"></a>
+		<a href="javascript:void(0)" id="rules"></a>
+		<!-- <img src="img/home.jpg" /> -->
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script>
+(function(){
+
+	var winW = $(window).width(),
+		winH = $(window).height();
+		$('#home').css({
+			'width':winW,
+			'height':winH
+		})
+	if(winW < 640){
+		if(winW/winH > 1080/1706){
+			$('#home').css('background-size', winW)
+		}else{
+			var str = 'auto '+ winH+"px";
+			$('#home').css('background-size', str)
+		}
+	}else{
+		if(640/winH > 1080/1706){
+			var str = 'auto '+ winH+"px";
+			$('#home').css('background-size', str)
+		}else{
+			$('#home').css('background-size', '640px')
+		}
+	}
+
+})()
+</script>
+</body>
+</html>
